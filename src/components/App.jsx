@@ -1,10 +1,11 @@
-import '../styles/App.css'
+import '../styles/App.css';
+import GameViewerWithSearch from "./GameViewerWithSearch";
 
 function App() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <GameViewerWithSearch/>
+    </>
   )
 }
 
