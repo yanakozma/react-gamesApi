@@ -1,0 +1,7 @@
+.dealsSection {
+    width: 100%;
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}

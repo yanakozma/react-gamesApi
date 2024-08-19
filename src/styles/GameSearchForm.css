@@ -1,0 +1,27 @@
+.GameSearchForm {
+    flex: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: cadetblue;
+    color: white;
+}
+
+input,
+button {
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    margin: 20px;
+    font-size: 22px;
+}
+
+input {
+    padding-left: 10px;
+}
+
+button {
+    cursor: pointer;
+}
