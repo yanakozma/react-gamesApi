@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function GameViewerWithSearch() {
     const [gameTitle, setGameTitle] = useState("");
-    const [searchedGames, setSearchedGames] = useState([])
+    const [searchedGames, setSearchedGames] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
@@ -22,6 +22,17 @@ export default function GameViewerWithSearch() {
     return (
         <>
             <GameSearchForm searchGame={searchGame} />
+            <div className="games">
+                {searchedGames.map((game) => {
+                    return (
+                        <div key={game.gameID} className="game">
+                            {game.external}
+                            <img src={game.thumb} alt="" />
+                            {game.cheapest}
+                        </div>
+                    )
+                })}
+            </div>
             <div className="dealsSection">
                 <h1>Latest Deals</h1>
             </div>
