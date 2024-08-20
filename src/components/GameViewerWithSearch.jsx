@@ -5,15 +5,25 @@ import { useState, useEffect } from "react";
 export default function GameViewerWithSearch() {
     const [gameTitle, setGameTitle] = useState("");
     const [searchedGames, setSearchedGames] = useState([]);
+    const [gameDeals, setGameDeals] = useState([]);
 
     useEffect(() => {
-        async function fetchData() {
+        async function fetchGameData() {
             const response = await fetch(`https://www.cheapshark.com/api/1.0/games?title=${gameTitle}&limit=3`);
             const data = await response.json();
             setSearchedGames(data);
         }
-        fetchData();
+        fetchGameData();
     }, [gameTitle]);
+
+    useEffect(() => {
+        async function fetchDealsData() {
+            const response = await fetch(`https://www.cheapshark.com/api/1.0/deals?storeID=1&upperPrice=20&pageSize=3`);
+            const data = await response.json();
+            setGameDeals(data);
+        }
+        fetchDealsData();
+    }, []);
 
     const searchGame = (gameTitle) => {
         setGameTitle(gameTitle);
@@ -35,6 +45,18 @@ export default function GameViewerWithSearch() {
             </div>
             <div className="dealsSection">
                 <h1>Latest Deals</h1>
+                <div className="deals">
+                    {gameDeals.map((deal) => {
+                        return (
+                            <div key={deal.dealID} className="deal">
+                                <h3>{deal.title}</h3>
+                                <p>Normal Price: {deal.normalPrice}</p>
+                                <p>Deal Price: {deal.salePrice}</p>
+                                <h3>YOU SAVE {deal.savings.substr(0,2)}%</h3>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </>
     )
