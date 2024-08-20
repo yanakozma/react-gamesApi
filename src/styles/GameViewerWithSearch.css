@@ -1,10 +1,3 @@
-.dealsSection {
-    width: 100%;
-    flex: 50%;
-    display: flex;
-    justify-content: center;
-}
-
 .games {
     width: 100%;
     height: 150px;
@@ -26,4 +19,33 @@
 .game img {
     width: 80%;
     margin-top: 10px;
+}
+
+.dealsSection {
+    width: 100%;
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.dealsSection h1 {
+    margin: 10px 0 0 0;
+}
+
+.deals {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.deal {
+    background-color: cadetblue;
+    color: white;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 7px;
+    padding: 5px;
 }
