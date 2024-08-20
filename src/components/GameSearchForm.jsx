@@ -11,8 +11,9 @@ export default function GameSearchForm({searchGame}) {
     };
     return (
         <form onSubmit={handleSubmit} className="GameSearchForm">
-            <h1>Search For A Game</h1>
-            <input 
+            <label htmlFor="name">Search For A Game</label>
+            <input
+            id="name"
             placeholder="Minecraft..." 
             type="text" 
             value={text}
