@@ -8,6 +8,12 @@
     color: white;
 }
 
+label {
+    font-size: 2rem;
+    font-weight:700;
+    margin: 15px 0 5px;
+}
+
 input,
 button {
     width: 300px;
